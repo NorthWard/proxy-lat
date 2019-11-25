@@ -8,6 +8,7 @@ public class SearchProxy implements Search {
         this.search = search;
     }
 
+    @Override
     public String search(String key) {
         long bt = System.currentTimeMillis();
         String ret = search.search(key);

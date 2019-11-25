@@ -2,7 +2,7 @@ package com.north.lat.proxylat.service;
 
 
 /**
- * @author laihaohua
+ * @author lhh
  */
 public interface Search {
     String search(String key);
