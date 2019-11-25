@@ -1,4 +1,4 @@
-package com.north.lat.proxylat.service.impl.apectj;
+package com.north.lat.proxylat.service.impl.aspectj;
 
 
 import java.lang.annotation.ElementType;

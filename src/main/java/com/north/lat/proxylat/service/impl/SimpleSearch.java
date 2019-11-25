@@ -1,17 +1,17 @@
 package com.north.lat.proxylat.service.impl;
 
 import com.north.lat.proxylat.service.Search;
-import com.north.lat.proxylat.service.impl.apectj.NeedMonitor;
+import com.north.lat.proxylat.service.impl.aspectj.NeedMonitor;
 
 public class SimpleSearch implements Search {
 
-    //@NeedMonitor
+    @NeedMonitor
     @Override
     public String search(String key) {
         return  key.hashCode() + "";
     }
 
-    //@NeedMonitor
+    @NeedMonitor
     public String prettySearch(String key){
        String result = search(key);
        // 优化一下返回结果

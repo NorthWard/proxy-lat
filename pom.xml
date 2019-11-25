@@ -8,6 +8,9 @@
     <artifactId>proxy-lat</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>proxy-lat-sandbox-module</module>
+    </modules>
 
     <dependencies>
     <!-- https://mvnrepository.com/artifact/cglib/cglib -->

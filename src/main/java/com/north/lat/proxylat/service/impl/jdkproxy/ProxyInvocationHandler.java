@@ -1,30 +1,25 @@
 package com.north.lat.proxylat.service.impl.jdkproxy;
 
-import com.north.lat.proxylat.service.Search;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
-public class SearchInvocationHandler implements InvocationHandler{
+public class ProxyInvocationHandler implements InvocationHandler{
 
-    private Search target;
-    public SearchInvocationHandler(Search target) {
+    /**
+     * target  一般指委托类实例
+     */
+    private Object target;
+    public ProxyInvocationHandler(Object target) {
         this.target = target;
     }
 
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
         long bt = System.currentTimeMillis();
+        // 通过调用target的method
         String ret = (String) method.invoke(target, args);
         long et = System.currentTimeMillis();
         System.out.println("SearchJdkProxy.search  cost : " + (et - bt));
         return ret;
-    }
-
-
-    public Search getJdkProxy() {
-        return (Search) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
-                new Class[]{Search.class}, this);
     }
 }
