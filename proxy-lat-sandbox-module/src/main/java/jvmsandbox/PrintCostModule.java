@@ -30,6 +30,7 @@ public class PrintCostModule implements Module {
                     @Override
                     protected void before(Advice advice) throws Throwable {
                         super.before(advice);
+                        // 先把当前的时间时间, 和方法名放到attach暂存着. 在after方法中再取出来
                         advice.attach(System.currentTimeMillis(), advice.getBehavior().getName());
                     }
 
@@ -37,11 +38,13 @@ public class PrintCostModule implements Module {
                     protected void after(Advice advice) throws Throwable {
                         super.after(advice);
                         try{
-                            String name = advice.getBehavior().getName();
-                            if(advice.hasMark(name)){
+                            String method = advice.getBehavior().getName();
+                            // 如果这个method执行过before方法, 那么这里肯定为true
+                            if(advice.hasMark(method)){
                                 Object attachment = advice.attachment();
+                                // attachment即为执行before方法的系统时间
                                 Long bt = Long.parseLong(attachment.toString());
-                                System.out.println(name +" cost: " + (System.currentTimeMillis()- bt));
+                                System.out.println(method +" cost: " + (System.currentTimeMillis()- bt));
                             }
                         }catch (Throwable e){
                              e.printStackTrace();

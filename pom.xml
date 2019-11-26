@@ -9,61 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>proxy-lat-sandbox-module</module>
-        <module>proxy-lat-aop-agent</module>
+        <module>proxy-lat-search</module>
     </modules>
-
-    <dependencies>
-    <!-- https://mvnrepository.com/artifact/cglib/cglib -->
-    <dependency>
-        <groupId>cglib</groupId>
-        <artifactId>cglib</artifactId>
-        <version>3.2.9</version>
-    </dependency>
-
-
-    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>1.9.4</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/aspectj/aspectjrt -->
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>1.8.9</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/javassist/javassist -->
-    <dependency>
-        <groupId>javassist</groupId>
-        <artifactId>javassist</artifactId>
-        <version>3.12.1.GA</version>
-    </dependency>
-
-
-</dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.10</version>
-                <configuration>
-                    <complianceLevel>1.8</complianceLevel>
-                    <source>1.8</source>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <!-- <goal>test-compile</goal>-->
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-
-    </build>
 </project>

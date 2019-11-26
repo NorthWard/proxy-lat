@@ -32,7 +32,6 @@ public class PrintTimeCostAgent {
 
             ClassPool pool = ClassPool.getDefault();
             CtClass cc = pool.get(className);
-
             // 使用javassist修改字节码
             byte[] classBytes = getRedefineClass(cc);
             if(classBytes == null){
