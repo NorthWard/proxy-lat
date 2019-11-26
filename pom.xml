@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>proxy-lat-sandbox-module</module>
+        <module>proxy-lat-aop-agent</module>
     </modules>
 
     <dependencies>

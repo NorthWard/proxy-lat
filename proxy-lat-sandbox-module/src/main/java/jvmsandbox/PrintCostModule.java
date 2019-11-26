@@ -1,4 +1,3 @@
-/*
 package jvmsandbox;
 
 import com.alibaba.jvm.sandbox.api.Information;
@@ -55,4 +54,3 @@ public class PrintCostModule implements Module {
 
     }
 }
-*/
